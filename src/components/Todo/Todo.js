@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, Container, InputGroup, FormControl} from 'react-bootstrap';
 import { useAuth } from "../../contexts/AuthContext"
 import { todoDB } from '../../firebase'
+import Header from '../pages/Header';
 import TodoList from './TodoList';
 
 
@@ -33,6 +34,7 @@ export default function Todo() {
 
     return (
         <Container>
+            <Header />
             <h2 className='text-center m-3'>Todo app</h2>
             <div className='d-flex-row justify-content-center'>
                 <InputGroup className="mb-3">

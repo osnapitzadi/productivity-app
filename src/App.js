@@ -9,14 +9,15 @@ import PrivateRoute from './components/auth/PrivateRoute'
 import ForgotPassword from './components/auth/ForgotPassword';
 import Todo from './components/Todo/Todo';
 import UpdateProfile from './components/auth/UpdateProfile';
-import Home from './components/Home';
+import Home from './components/pages/Home';
+import Header from './components/pages/Header'
 
 function App() {
   return (
     <Router>
       <AuthProvider>
         <Switch>
-          <Route exact path='/' component={Home} />
+          <PrivateRoute exact path='/' component={Home} />
           <PrivateRoute path='/user' component={Dashboard} />
           <PrivateRoute path='/update-profile' component={UpdateProfile} />
           <PrivateRoute path='/todo' component={Todo} />
