@@ -13,5 +13,11 @@ const app = firebase.initializeApp({
     appId: process.env.REACT_APP_APP_ID
 });
 
+const firestore = app.firestore();
+
+export const todoDB = {
+    todos: firestore.collection('todos'),
+    getCurrentTimestamp: firebase.firestore.FieldValue.serverTimestamp
+}
 export const auth = app.auth();
 export default app;
