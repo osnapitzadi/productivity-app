@@ -1,19 +1,25 @@
 import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import CenteredContainer from "./CenteredContainer"
 
 export default function Dashboard() {
+
+  // definig hooks
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const history = useHistory()
-//   console.log(currentUser);
 
   async function handleLogout() {
+
+    // clears error message
     setError("")
 
     try {
       await logout()
+
+      // redirech to login 
       history.push("/login")
     } catch {
       setError("Failed to log out")
@@ -21,7 +27,7 @@ export default function Dashboard() {
   }
 
   return (
-    <>
+    <CenteredContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>
@@ -37,6 +43,6 @@ export default function Dashboard() {
           Log Out
         </Button>
       </div>
-    </>
+    </CenteredContainer>
   )
 }
