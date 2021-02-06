@@ -41,7 +41,7 @@ $ npm start
 Rename .env-example to .env.local 
 Then change content to 
 ```env
-// src/firebase/config.js
+// /.env.local
 REACT_APP_FIREBASE_API_KEY=your api key
 REACT_APP_AUTH_DOMAIN=your-project-id.firebaseapp.com
 REACT_APP_DATABASE_URL=https://your-project-id.firebaseio.com
