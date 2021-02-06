@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Productivity app with Create React, React-Bootstrap and Firebase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Try the demo at https://productivity-app-prod.web.app/ 
 
-## Available Scripts
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+- Create React App
+- React Router
+- React Router Redux
+- Firebase SDK with OAuth authentication
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Quick Start
+-----------
 
-### `npm test`
+```shell
+$ git clone https://github.com/osnapitzadi/productivity-app.git
+$ cd productivity-app
+$ npm install
+$ npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deploying to Firebase
+#### Prerequisites:
+- Create a free Firebase account at https://firebase.google.com
+- Create a project from your [Firebase account console](https://console.firebase.google.com)
+- Configure the authentication providers for your Firebase project from your Firebase account console
 
-### `npm run build`
+#### Configure this app with your project-specific details:
+```json
+// .firebaserc
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+{
+  "projects": {
+    "default": "your-project-id"
+  }
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Rename .env-example to .env.local 
+Then change content to 
+```env
+// src/firebase/config.js
+REACT_APP_FIREBASE_API_KEY=your api key
+REACT_APP_AUTH_DOMAIN=your-project-id.firebaseapp.com
+REACT_APP_DATABASE_URL=https://your-project-id.firebaseio.com
+REACT_APP_PROJECT_ID=your project id
+REACT_APP_STORAGE_BUCKET=your storage bucket
+REACT_APP_MESSAGING_SENDER_ID=your messaging sender id
+REACT_APP_APP_ID=your app id
+```
+You can find this information in Firebase console
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Install firebase-tools:
+```shell
+$ npm install -g firebase-tools
+```
 
-### `npm run eject`
+#### Build and deploy the app:
+```shell
+$ npm run build
+$ firebase login
+$ firebase use default
+$ firebase deploy
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## NPM Commands
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+|Script|Description|
+|---|---|
+|`npm start`|Start webpack development server @ `localhost:3000`|
+|`npm run build`|Build the application to `./build` directory|
+|`npm test`|Test the application; watch for changes and retest|
