@@ -35,7 +35,9 @@ export default function SignUp() {
 
     return (
         <CenteredContainer>
-            <Card className="mt-3">
+            <Card 
+                bg='dark'
+                text='light'>
                 <Card.Body>
                     <h2 className="text-center mb-4">Sign Up</h2>
                     {error && <Alert variant="danger">{error}</Alert>}

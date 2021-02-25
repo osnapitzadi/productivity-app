@@ -29,7 +29,9 @@ export default function ForgotPassword() {
 
   return (
     <CenteredContainer>
-      <Card>
+      <Card 
+        bg='dark'
+        text='light'>
         <Card.Body>
           <h2 className="text-center mb-4">Password Reset</h2>
           {error && <Alert variant="danger">{error}</Alert>}
