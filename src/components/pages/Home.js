@@ -94,7 +94,7 @@ export default function Home() {
                         }}
                         transition={{ 
                             duration: 3,
-                            delay: 4 
+                            delay: 5 
                         }}
                     >
                         Stop Wasting Your Time
@@ -108,7 +108,7 @@ export default function Home() {
                         animate={{ opacity: 1 }}
                         transition={{ 
                             duration: 4,
-                            delay: 6.99
+                            delay: 7.99
                         }}
                     >
                         Join <span className="prodact">ProdAct</span>
