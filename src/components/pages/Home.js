@@ -54,7 +54,7 @@ export default function Home() {
 
             :
             <>
-                <Navbar variant='dark' fixed='top'>
+                <Navbar variant='dark' sticky='top'>
                 <Navbar.Brand>
                 <img
                     alt=""
@@ -69,11 +69,11 @@ export default function Home() {
                         <Nav.Link as={Link} to='/signup'>Sign Up</Nav.Link>
                     </Nav>
                 </Navbar>
-                <AnimatePresence className='vh-100 wh-100'>
+                <AnimatePresence className='d-flex justify-content-center align-items-center'>
 
                     <motion.h1
                         key='h1'
-                        className="h1"
+                        className="h1 text-center col-sm text-break"
                         initial={{ opacity: 1 }}
                         animate={{ 
                             opacity: 0,
@@ -87,7 +87,7 @@ export default function Home() {
 
                     <motion.h1
                         key='hook'
-                        className="hook"
+                        className="hook text-center col-sm"
                         // initial={{ opacity: 0 }}
                         animate={{ 
                             opacity: [0, 1, 0]
@@ -102,7 +102,7 @@ export default function Home() {
                     </motion.h1>
 
                     <motion.h1 
-                        className="join"
+                        className="join text-center col-sm"
                         key='join'
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

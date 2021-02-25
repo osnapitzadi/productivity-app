@@ -52,3 +52,27 @@ input {
 .prodact{
   color: #86C232
 }
+
+@media (max-width: 575.98px) { 
+  .h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 150px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .join {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 75px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
