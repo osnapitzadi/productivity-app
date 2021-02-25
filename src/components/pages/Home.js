@@ -55,14 +55,14 @@ export default function Home() {
             :
             <>
                 <Navbar variant='dark' fixed='top'>
-                    <Navbar.Brand>
-                    <img
-                        alt=""
-                        src={logo}
-                        width="100"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />
+                <Navbar.Brand>
+                <img
+                    alt=""
+                    src={logo}
+                    width="100"
+                    height="30"
+                    className="d-inline-block align-top"
+                />
                 </Navbar.Brand>
                     <Nav className="justify-content-end ml-auto">
                         <Nav.Link as={Link} to='/login'>Sign In</Nav.Link>
@@ -79,7 +79,7 @@ export default function Home() {
                             opacity: 0,
                             color: "#FF0000"
                         }}
-                        transition={{ duration: 4 }}
+                        transition={{ duration: 5 }}
                         
                     >
                         {time}
@@ -88,17 +88,13 @@ export default function Home() {
                     <motion.h1
                         key='hook'
                         className="hook"
-                        initial={{ opacity: 0 }}
+                        // initial={{ opacity: 0 }}
                         animate={{ 
-                            opacity: 1,
-                            transitionEnd: {
-                                display: "none",
-                              },
-
+                            opacity: [0, 1, 0]
                         }}
                         transition={{ 
-                            duration: 4,
-                            delay: 3 
+                            duration: 3,
+                            delay: 4 
                         }}
                     >
                         Stop Wasting Your Time
@@ -112,7 +108,7 @@ export default function Home() {
                         animate={{ opacity: 1 }}
                         transition={{ 
                             duration: 4,
-                            delay: 7
+                            delay: 6.99
                         }}
                     >
                         Join <span className="prodact">ProdAct</span>
