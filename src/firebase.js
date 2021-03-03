@@ -19,5 +19,11 @@ export const todoDB = {
     todos: firestore.collection('todos'),
     getCurrentTimestamp: firebase.firestore.FieldValue.serverTimestamp
 }
+export const trackDB = {
+    track: firestore.collection('track'),
+    getCurrentTimestamp: firebase.firestore.FieldValue.serverTimestamp
+}
+
+
 export const auth = app.auth();
 export default app;
