@@ -54,32 +54,32 @@ export default function Home() {
 
             :
             <>
-                <Navbar variant='dark' fixed='top'>
-                    <Navbar.Brand>
-                    <img
-                        alt=""
-                        src={logo}
-                        width="100"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />
+                <Navbar variant='dark' sticky='top'>
+                <Navbar.Brand>
+                <img
+                    alt=""
+                    src={logo}
+                    width="100"
+                    height="30"
+                    className="d-inline-block align-top"
+                />
                 </Navbar.Brand>
                     <Nav className="justify-content-end ml-auto">
                         <Nav.Link as={Link} to='/login'>Sign In</Nav.Link>
                         <Nav.Link as={Link} to='/signup'>Sign Up</Nav.Link>
                     </Nav>
                 </Navbar>
-                <AnimatePresence className='vh-100 wh-100'>
+                <AnimatePresence className='d-flex justify-content-center align-items-center'>
 
                     <motion.h1
                         key='h1'
-                        className="h1"
+                        className="h1 text-center col-sm text-break"
                         initial={{ opacity: 1 }}
                         animate={{ 
                             opacity: 0,
                             color: "#FF0000"
                         }}
-                        transition={{ duration: 4 }}
+                        transition={{ duration: 5 }}
                         
                     >
                         {time}
@@ -87,18 +87,14 @@ export default function Home() {
 
                     <motion.h1
                         key='hook'
-                        className="hook"
-                        initial={{ opacity: 0 }}
+                        className="hook text-center col-sm"
+                        // initial={{ opacity: 0 }}
                         animate={{ 
-                            opacity: 1,
-                            transitionEnd: {
-                                display: "none",
-                              },
-
+                            opacity: [0, 1, 0]
                         }}
                         transition={{ 
-                            duration: 4,
-                            delay: 3 
+                            duration: 3,
+                            delay: 5 
                         }}
                     >
                         Stop Wasting Your Time
@@ -106,13 +102,13 @@ export default function Home() {
                     </motion.h1>
 
                     <motion.h1 
-                        className="join"
+                        className="join text-center col-sm"
                         key='join'
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ 
                             duration: 4,
-                            delay: 7
+                            delay: 7.99
                         }}
                     >
                         Join <span className="prodact">ProdAct</span>
