@@ -11,6 +11,7 @@ import ForgotPassword from './components/auth/ForgotPassword';
 import Todo from './components/Todo/Todo';
 import UpdateProfile from './components/auth/UpdateProfile';
 import Home from './components/pages/Home';
+import Track from "./components/track/Track";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <PrivateRoute path='/user' component={Dashboard} />
           <PrivateRoute path='/update-profile' component={UpdateProfile} />
           <PrivateRoute path='/todo' component={Todo} />
+          <PrivateRoute path='/track' component={Track} />
           <Route exact path='/' component={Home} />
           <Route path='/signup' component={SignUp} />
           <Route path='/login' component={Login} />

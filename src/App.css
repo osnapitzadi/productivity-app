@@ -2,9 +2,7 @@
 
 html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Orbitron', sans-serif;
   background-color: #222629;
   color: white
 }
@@ -75,4 +73,17 @@ input {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+}
+
+.nav-pills .nav-link.active {
+  background-color: #222629 !important;
+  color: white !important;
+}
+
+a {
+  color: white !important;
+}
+
+.nav-item .nav-link{
+  color: #222629 !important;
 }

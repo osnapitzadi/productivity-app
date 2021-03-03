@@ -16,7 +16,7 @@ export default function Header() {
                 />
             </Navbar.Brand>
                 <Nav className="justify-content-end ml-auto">
-                    <Nav.Link as={Link} to='/'>Home</Nav.Link>
+                    <Nav.Link as={Link} to='/track'>Tracking App</Nav.Link>
                     <Nav.Link as={Link} to='/todo'>To Do App</Nav.Link>
                     <Nav.Link as={Link} to='/user'>User</Nav.Link>
                 </Nav>
