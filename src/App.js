@@ -12,22 +12,36 @@ import Todo from './components/Todo/Todo';
 import UpdateProfile from './components/auth/UpdateProfile';
 import Home from './components/pages/Home';
 import Track from "./components/track/Track";
+import { motion, AnimatePresence } from "framer-motion"
 
 function App() {
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+    },
+    in: {
+      opacity: 1,
+    },
+    out: {
+      opacity: 0,
+    },
+  }
   return (
     <Router>
       <AuthProvider>
-        <Switch>
-          {/* <PrivateRoute exact path='/' component={Home} /> */}
-          <PrivateRoute path='/user' component={Dashboard} />
-          <PrivateRoute path='/update-profile' component={UpdateProfile} />
-          <PrivateRoute path='/todo' component={Todo} />
-          <PrivateRoute path='/track' component={Track} />
-          <Route exact path='/' component={Home} />
-          <Route path='/signup' component={SignUp} />
-          <Route path='/login' component={Login} />
-          <Route path='/forgot-password' component={ForgotPassword} />
-        </Switch>
+        <AnimatePresence>
+          <Switch>
+            {/* <PrivateRoute exact path='/' component={Home} /> */}
+            <PrivateRoute path='/user' component={Dashboard} />
+            <PrivateRoute path='/update-profile' component={UpdateProfile} />
+            <PrivateRoute path='/todo' component={Todo} />
+            <PrivateRoute path='/track' component={Track} />
+            <Route exact path='/' component={Home} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/login' component={Login} />
+            <Route path='/forgot-password' component={ForgotPassword} />
+          </Switch>
+        </AnimatePresence>
       </AuthProvider>
     </Router>
   );
