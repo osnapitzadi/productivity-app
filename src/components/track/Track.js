@@ -96,76 +96,92 @@ export default function Track() {
         setTrackInput(e.target.value);
     }
 
-
+    const pageVariants = {
+        initial: {
+          opacity: 0,
+        },
+        in: {
+          opacity: 1,
+        },
+        out: {
+          opacity: 0,
+        },
+      }
     return (
         <Container>
-            
-            
             <Header />
             <motion.div
-                variants={categoryVariants}
-                initial='prod'
-                animate={category}
-                transition={{ ease: "easeOut", duration: 1 }}
-            > 
-            <Card className="text-center"
-                bg='transparent'
-                // text='light'
-            >
-                <Card.Header>
-                    <Tabs 
-                        id="category-tabs"
-                        variant="pills"
-                        activeKey={category}
-                        onSelect={(c) => setCategory(c)}
-                        justify="true"
-                        as="btn"
-                    >
-                        <Tab eventKey="prod" title="Productivity" variant='light'>
-                        </Tab>
-                        <Tab eventKey="nv" title="No Value">
-                        </Tab>
-                        <Tab eventKey="sleep" title="Sleep" >
-                        </Tab>
-                        <Tab eventKey="relationships" title="Relationships" >
-                        </Tab>
-                    </Tabs>
-                </Card.Header>
-                <Card.Body>
-                    {/* INPUT */}
-                    <InputGroup size="lg">
-                        <FormControl 
-                            aria-label="Large" 
-                            aria-describedby="inputGroup-sizing-sm" 
-                            placeholder="What are you up to?"
-                            onInput={inputHandler} 
-                            value={trackInput}
-                        />
-                    </InputGroup>
-                </Card.Body>
-                <Card.Body>
-                    <h1> {formatTime()} </h1> 
-                </Card.Body>
-                <Card.Footer className='d-flex justify-content-around'>
-                    <Button 
-                        onClick={handleStart}
-                        variant="outline-dark"
-                        className="d-flex justify-content-center align-items-center p-2"
-                    >
-                        <FaPlay />
-                    </Button>
-                    <Button 
-                        onClick={handleStop}
-                        variant="outline-dark" 
-                        className="d-flex justify-content-center align-items-center p-2"
-                    >
-                        <FaStop />
-                    </Button>  
-                </Card.Footer>
-            </Card>
+                initial="initial"
+                duration='2'
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+            >            
+                <motion.div
+                    variants={categoryVariants}
+                    initial='prod'
+                    animate={category}
+                    transition={{ ease: "easeOut", duration: 1 }}
+                > 
+                <Card className="text-center"
+                    bg='transparent'
+                    // text='light'
+                >
+                    <Card.Header>
+                        <Tabs 
+                            id="category-tabs"
+                            variant="pills"
+                            activeKey={category}
+                            onSelect={(c) => setCategory(c)}
+                            justify="true"
+                            as="btn"
+                        >
+                            <Tab eventKey="prod" title="Productivity" variant='light'>
+                            </Tab>
+                            <Tab eventKey="nv" title="No Value">
+                            </Tab>
+                            <Tab eventKey="sleep" title="Sleep" >
+                            </Tab>
+                            <Tab eventKey="relationships" title="Relationships" >
+                            </Tab>
+                        </Tabs>
+                    </Card.Header>
+                    <Card.Body>
+                        {/* INPUT */}
+                        <InputGroup size="lg">
+                            <FormControl 
+                                aria-label="Large" 
+                                aria-describedby="inputGroup-sizing-sm" 
+                                placeholder="What are you up to?"
+                                onInput={inputHandler} 
+                                value={trackInput}
+                            />
+                        </InputGroup>
+                    </Card.Body>
+                    <Card.Body>
+                        <h1> {formatTime()} </h1> 
+                    </Card.Body>
+                    <Card.Footer className='d-flex justify-content-around'>
+                        <Button 
+                            onClick={handleStart}
+                            variant="outline-dark"
+                            className="d-flex justify-content-center align-items-center p-2"
+                        >
+                            <FaPlay />
+                        </Button>
+                        <Button 
+                            onClick={handleStop}
+                            variant="outline-dark" 
+                            className="d-flex justify-content-center align-items-center p-2"
+                        >
+                            <FaStop />
+                        </Button>  
+                    </Card.Footer>
+                </Card>
+                </motion.div>
+                <h1 className="m-3 text-center">Your Tracked List</h1>
+                <TrackList />
             </motion.div>
-            <h1 className="m-3 text-center">Your Tracked List</h1>
-            <TrackList />
         </Container>
     )
 }
