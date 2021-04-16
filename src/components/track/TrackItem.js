@@ -5,8 +5,6 @@ import { format, intervalToDuration } from 'date-fns'
 import { FaInfoCircle, FaTrash } from "react-icons/fa";
 
 
-
-
 export default function TrackItem(props) {
     
     const interval = intervalToDuration({
